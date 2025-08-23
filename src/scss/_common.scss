@@ -1,0 +1,16 @@
+@use './variable' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, arial;
+ background-color: $body-color;
+}
+
+.content {
+  padding: 0 32px;
+}

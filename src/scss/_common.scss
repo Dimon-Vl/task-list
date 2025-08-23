@@ -14,3 +14,9 @@ body {
 .content {
   padding: 0 32px;
 }
+
+@media (max-width: 560px) {
+  .content {
+  padding: 0 16px;
+}
+}

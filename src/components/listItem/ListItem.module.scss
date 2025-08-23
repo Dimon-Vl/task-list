@@ -2,7 +2,8 @@
 
 .item {
   display: grid;
-  grid-template-columns: 1fr 150px 50px;
+  grid-template-columns: 1fr 130px 50px;
+  align-items: center;
   background-color: $item-color;
   border: 2px solid $theme-tone-color;
   padding: 10px 15px;
@@ -10,7 +11,7 @@
   border-radius: 4px;
 }
 
-.itemCompleted{
+.itemCompleted {
   border: 2px solid $item-completed-color;
 }
 
@@ -36,6 +37,7 @@
 
 .date {
   color: $date-color;
+  font-size: 14px;
 }
 
 .delete {
@@ -66,4 +68,27 @@
 
 .editing {
   border: 2px solid $theme-tone-color;
+}
+
+@media (max-width: 560px) {
+  .item {
+    grid-template-columns: 1fr 50px;
+  }
+
+  .content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .date {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding-left: 30px;
+  }
+
+  .onChange {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
 }

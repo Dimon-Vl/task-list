@@ -18,6 +18,10 @@ body {
   margin: 0 auto;
 }
 
+.noTask{
+ color: var(--item-text-color);
+}
+
 @media (max-width: 1200px) {
   .content {
     width: 100%

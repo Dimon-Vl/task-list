@@ -19,7 +19,7 @@ function App() {
           ))}
         </ul>
       ) : (
-        "Немає завдань"
+        <div className="noTask">Немає завдань</div>
       )}
     </div>
   )

@@ -23,3 +23,16 @@
   --item-text-color: #ffffff;
   --theme-border-color: #2daf49;
 }
+
+[data-theme="blue"] {
+  --theme-tone-color: #1e88e5;
+  --body-color: #e3f2fd;
+  --title-color: #0d47a1;
+  --date-color: #1565c0;
+  --add-btn-color: #c9dcea;
+  --box-shadow-color: rgba(30, 136, 229, 0.4);
+  --item-color: #90caf9;
+  --item-completed-color: #5c6bc0;
+  --item-text-color: #0d47a1;
+  --theme-border-color: #1565c0;
+}

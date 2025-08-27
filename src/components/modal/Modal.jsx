@@ -9,7 +9,7 @@ const Modal = () => {
     }
 
     return (
-        <div className={s.modal}>
+        <div className={s.modal} onClick={closeModal}>
             <div className={s.content}>
                 <button className={s.close} onClick={closeModal}>
                     ×

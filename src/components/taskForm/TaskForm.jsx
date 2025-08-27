@@ -1,13 +1,14 @@
 import { useContext, useRef } from "react"
-import s from "./TaskForm.module.scss"
 import { TaskListContext } from "../../context/TaskListContext"
 import { ModalContext } from "../../context/ModalContext"
+import s from "./TaskForm.module.scss"
+import sModal from "../modal/Modal.module.scss"
 
 const TaskForm = () => {
   const inputRef = useRef(null)
 
   const { addTask } = useContext(TaskListContext)
-  const { openModal} = useContext(ModalContext)
+  const { openModal } = useContext(ModalContext)
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -15,7 +16,8 @@ const TaskForm = () => {
     if (!value) {
       openModal(
         <>
-          <p>Поле не може бути пустим чи складатися лише з пробілів</p>
+          <p className={sModal.textCenter}>Поле не може бути пустим чи</p>
+          <p className={sModal.textCenter}>складатися лише з пробілів</p>
         </>
       )
       return

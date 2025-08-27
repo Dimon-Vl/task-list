@@ -1,72 +1,94 @@
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  backdrop-filter: blur(2px);
 }
 
 .content {
   background: #fff;
-  padding: 15px 30px 15px 15px;
-  border-radius: 8px;
-  min-width: 300px;
+  padding: 24px 28px;
+  border-radius: 10px;
+  min-width: 320px;
   max-width: 90%;
   position: relative;
-  animation: displayModal .3s ease-in-out;
+  animation: displayModal .25s ease-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
 }
 
 .close {
   position: absolute;
-  top: 0px;
-  right: 10px;
+  top: -5px;
+  right: 5px;
   border: none;
   background: none;
-  font-size: 28px;
+  font-size: 32px;
   cursor: pointer;
-  color: red;
+  color: #e74c3c;
+  transition: color .2s ease, transform .25s ease, translate .2s ease;
+
+  &:hover {
+    scale: 1.05;
+    color: #e2240f;
+    transform: translateY(-1px);
+  }
 }
 
 .btn {
-  padding: 6px 14px;
+  padding: 8px 18px;
   border: 1px solid var(--theme-tone-color);
-  border-radius: 4px;
+  border-radius: 6px;
   background: #fff;
   color: var(--theme-tone-color);
   cursor: pointer;
-  font-size: 14px;
-  transition: background-color .2s ease, color .2s ease;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color .25s ease, color .25s ease, box-shadow .2s ease;
 
   &:hover {
     background: var(--theme-tone-color);
     color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 
   &:active {
-    transform: scale(0.97);
+    transform: scale(0.96);
   }
 
   &:focus-visible {
     outline: 2px solid var(--theme-tone-color);
-    outline-offset: 2px;
+    outline-offset: 3px;
   }
 }
 
 .ctaBtn {
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.textCenter {
+  text-align: center;
 }
 
 @keyframes displayModal {
   from {
     opacity: 0;
-    transform: scale(.95);
+    transform: translateY(-10px) scale(.95);
   }
 
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) scale(1);
   }
 }

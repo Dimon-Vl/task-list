@@ -34,7 +34,8 @@ export const TaskListProvider = ({ children }) => {
         if (existTask.length) {
             openModal(
                 <>
-                    <p>Така задача вже існує.<br />Точно додати дубль?</p>
+                    <p className={s.textCenter}>Така задача вже існує.</p>
+                    <p className={s.textCenter}>Точно додати дубль?</p>
                     <div className={s.ctaBtn}>
                         <button className={s.btn} onClick={() => {
                                 addItem()

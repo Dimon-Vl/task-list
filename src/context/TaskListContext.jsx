@@ -38,9 +38,9 @@ export const TaskListProvider = ({ children }) => {
                     <p className={s.textCenter}>Точно додати дубль?</p>
                     <div className={s.ctaBtn}>
                         <button className={s.btn} onClick={() => {
-                                addItem()
-                                closeModal()
-                            }}
+                            addItem()
+                            closeModal()
+                        }}
                         >
                             Так
                         </button>
@@ -55,6 +55,10 @@ export const TaskListProvider = ({ children }) => {
 
     const deleteTask = (id) => {
         setItems(items.filter((item) => item.id !== id))
+    }
+
+    const deleteAllTask = () => {
+        setItems([])
     }
 
     const toggleTask = (id) => {
@@ -73,7 +77,7 @@ export const TaskListProvider = ({ children }) => {
     }
 
     return (
-        <TaskListContext.Provider value={{ items, unfinishedTaskQuantity, addTask, deleteTask, toggleTask, editTask }}>
+        <TaskListContext.Provider value={{ items, unfinishedTaskQuantity, addTask, deleteTask, toggleTask, editTask,deleteAllTask }}>
             {children}
         </TaskListContext.Provider>
     )

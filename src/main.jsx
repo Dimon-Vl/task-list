@@ -3,11 +3,14 @@ import './index.scss'
 import App from './App.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx'
 import { TaskListProvider } from './context/TaskListContext.jsx'
+import { ModalProvider } from './context/ModalContext.jsx'
 
 createRoot(document.getElementById('root')).render(
     <ThemeProvider>
-        <TaskListProvider>
-            <App />
-        </TaskListProvider>
+        <ModalProvider>
+            <TaskListProvider>
+                <App />
+            </TaskListProvider>
+        </ModalProvider>
     </ThemeProvider>
 )

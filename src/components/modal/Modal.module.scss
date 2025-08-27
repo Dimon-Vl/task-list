@@ -1,0 +1,71 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 300px;
+  max-width: 90%;
+  position: relative;
+  animation: displayModal .3s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 6px 14px;
+  border: 1px solid var(--theme-tone-color);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--theme-tone-color);
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color .2s ease, color .2s ease;
+
+  &:hover {
+    background: var(--theme-tone-color);
+    color: #fff;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--theme-tone-color);
+    outline-offset: 2px;
+  }
+}
+
+.ctaBtn {
+  display: flex;
+  gap: 10px;
+}
+
+@keyframes displayModal {
+  from {
+    opacity: 0;
+    transform: scale(.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

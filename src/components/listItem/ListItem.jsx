@@ -82,7 +82,7 @@ const ListItem = ({ item: { id, text, onFinished, date } }) => {
         </button>)
         }
         <button className={s.delete} onClick={() => deleteTask(id)}>
-          🗙
+          X
         </button>
       </div>
     </li>

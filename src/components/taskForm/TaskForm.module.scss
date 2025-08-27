@@ -11,38 +11,41 @@
     display: flex;
     align-items: center;
     gap: 10px;
-     flex-direction: row;
+    flex-direction: row;
 }
 
 .taskInput {
     flex: 1;
     padding: 8px 12px;
     font-size: 16px;
-    border: 2px solid $theme-tone-color;
+    border: 2px solid var(--theme-tone-color);
     border-radius: 4px;
+    color: var(--item-text-color);
 }
 
 .addBtn {
     padding: 8px 16px;
     font-size: 16px;
-    background-color: $theme-tone-color;
-    color: $add-btn-color;
+    background-color: var(--theme-tone-color);
+    color: var(--add-btn-color);
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: box-shadow .3s ease-in-out;
-     display: block;
+    display: block;
 }
 
 .addBtn:hover {
-    box-shadow: 0 4px 11px $box-shadow-color;
+    box-shadow: 0 4px 11px var(--box-shadow-color);
 }
 
-@media (max-width: 560px) {
+@media (max-width: 576px) {
     .row {
-       flex-direction: column;
+        flex-direction: column;
     }
-    .addBtn,.taskInput{
+
+    .addBtn,
+    .taskInput {
         width: 100%;
     }
 }

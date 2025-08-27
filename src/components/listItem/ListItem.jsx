@@ -1,18 +1,20 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useContext } from "react"
 import s from "./ListItem.module.scss"
 import classNames from "classnames"
+import { TaskListContext } from "../../context/TaskListContext"
 
-const ListItem = ({ id, text, date, done, onDelete, onToggle, onEdit }) => {
+const ListItem = ({ item: { id, text, onFinished, date } }) => {
+  const { editTask, toggleTask, deleteTask } = useContext(TaskListContext)
   const [isEditing, setIsEditing] = useState(false)
   const [tempText, setTempText] = useState(text)
+  const inputRef = useRef(null)
 
   useEffect(() => {
     if (isEditing) inputRef.current.focus()
   }, [isEditing])
 
-  const inputRef = useRef(null)
-
   const save = () => {
+
     const trimText = tempText.trim()
     setIsEditing(false)
 
@@ -22,9 +24,10 @@ const ListItem = ({ id, text, date, done, onDelete, onToggle, onEdit }) => {
     }
 
     if (trimText !== text) {
-      onEdit(id, trimText)
+      editTask(id, trimText)
     }
   }
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") save()
     if (e.key === "Escape" || tempText.trim().length === 0) {
@@ -34,21 +37,20 @@ const ListItem = ({ id, text, date, done, onDelete, onToggle, onEdit }) => {
   }
 
   return (
-    <li className={classNames(s.item, { [s.itemCompleted]: done })}>
+    <li className={classNames(s.item, { [s.itemCompleted]: onFinished })}>
       <div className={s.content}>
         <input
           type="checkbox"
           className={s.checkbox}
-          checked={done}
-          onChange={() => onToggle(id)}
+          checked={onFinished}
+          onChange={() => toggleTask(id)}
         />
-
         <input
           ref={inputRef}
           type="text"
           className={classNames(
             s.text,
-            { [s.completed]: done },
+            { [s.completed]: onFinished },
             { [s.editing]: isEditing }
           )}
           value={isEditing ? tempText : text}
@@ -66,14 +68,21 @@ const ListItem = ({ id, text, date, done, onDelete, onToggle, onEdit }) => {
       </span>
 
       <div className={s.onChange}>
-        <button
+        {isEditing ? (<button
           className={s.changeTask}
-          onClick={()=>setIsEditing(!isEditing)}
+          onClick={save}
+          onMouseDown={(e) => e.preventDefault()}
+        >
+          💾
+        </button>) : (<button
+          className={s.changeTask}
+          onClick={() => setIsEditing(true)}
         >
           ✏️
-        </button>
-        <button className={s.delete} onClick={() => onDelete(id)}>
-          ×
+        </button>)
+        }
+        <button className={s.delete} onClick={() => deleteTask(id)}>
+          🗙
         </button>
       </div>
     </li>

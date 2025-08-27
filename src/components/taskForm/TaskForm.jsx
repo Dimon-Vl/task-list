@@ -1,8 +1,11 @@
-import { useRef } from "react"
+import { useContext, useRef } from "react"
 import s from "./TaskForm.module.scss"
+import { TaskListContext } from "../../context/TaskListContext"
 
-const TaskForm = ({ onAdd }) => {
+const TaskForm = () => {
   const inputRef = useRef(null)
+
+  const {addTask} = useContext(TaskListContext)
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -10,7 +13,7 @@ const TaskForm = ({ onAdd }) => {
     if (!value) {
         return
     }
-    onAdd(value)
+    addTask(value)
     inputRef.current.value = ""
   }
 

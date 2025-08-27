@@ -8,15 +8,24 @@
 
 body {
   font-family: system-ui, arial;
- background-color: $body-color;
+  font-size: 16px;
+  background-color: var(--body-color);
 }
 
 .content {
   padding: 0 32px;
+  width: 1200px;
+  margin: 0 auto;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 1200px) {
   .content {
-  padding: 0 16px;
+    width: 100%
+  }
 }
+
+@media (max-width: 576px) {
+  .content {
+    padding: 0 16px;
+  }
 }

@@ -4,12 +4,15 @@ import App from './App.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx'
 import { TaskListProvider } from './context/TaskListContext.jsx'
 import { ModalProvider } from './context/ModalContext.jsx'
+import { DragProvider } from './context/dragContext.jsx'
 
 createRoot(document.getElementById('root')).render(
     <ThemeProvider>
         <ModalProvider>
             <TaskListProvider>
-                <App />
+                <DragProvider>
+                    <App />
+                </DragProvider>
             </TaskListProvider>
         </ModalProvider>
     </ThemeProvider>

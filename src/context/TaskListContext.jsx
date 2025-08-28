@@ -16,7 +16,7 @@ export const TaskListProvider = ({ children }) => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
     }, [items])
 
-    const unfinishedTaskQuantity = items.filter(el => !el.onFinished).length
+    const unfinishedTaskQuantity = items.filter(el => !el.onFinished).length + '/'+ items.length
 
     const addTask = (text) => {
         const addItem = () => {
@@ -77,7 +77,7 @@ export const TaskListProvider = ({ children }) => {
     }
 
     return (
-        <TaskListContext.Provider value={{ items, unfinishedTaskQuantity, addTask, deleteTask, toggleTask, editTask,deleteAllTask }}>
+        <TaskListContext.Provider value={{ items, unfinishedTaskQuantity, addTask, deleteTask, toggleTask, editTask, deleteAllTask}}>
             {children}
         </TaskListContext.Provider>
     )

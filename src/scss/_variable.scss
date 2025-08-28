@@ -1,6 +1,7 @@
 :root {
   --theme-tone-color: #5a2d0c;
   --body-color: #e3ebf0;
+  --content-color: #5a2c0c2d;
   --title-color: #111111;
   --date-color: #5f6368;
   --add-btn-color: #e6e6e6;
@@ -13,7 +14,8 @@
 
 [data-theme="dark"] {
   --theme-tone-color: #ff8c42;
-  --body-color: #1a1a1a;
+  --body-color: #3b3b3b;
+  --content-color: #242424;
   --title-color: #ffffff;
   --date-color: #cccccc;
   --add-btn-color: #313131;
@@ -26,13 +28,14 @@
 
 [data-theme="blue"] {
   --theme-tone-color: #1e88e5;
-  --body-color: #e3f2fd;
-  --title-color: #0d47a1;
+  --body-color: #b4dbf7;
+  --content-color: #e6ecf1;
+  --title-color: #0b2e66;
   --date-color: #1565c0;
   --add-btn-color: #dee7ee;
-  --box-shadow-color: rgba(30, 136, 229, 0.4);
-  --item-color: #90caf9;
-  --item-completed-color: #5c6bc0;
-  --item-text-color: #0d47a1;
-  --theme-border-color: #1565c0;
+  --box-shadow-color: rgba(13, 71, 161, 0.25);
+  --item-color: #bbdefb;
+  --item-completed-color: #7a9cc9;
+  --item-text-color: #08233f;
+  --theme-border-color: #fbc02d;
 }

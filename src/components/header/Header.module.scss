@@ -1,7 +1,8 @@
 @use '../../scss/variable' as *;
 
 .header {
-  padding: 20px 0;
+  // padding: 20px 0;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

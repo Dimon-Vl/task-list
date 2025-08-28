@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+#root{
+padding: 20px 0;
+}
+
 body {
   font-family: system-ui, arial;
   font-size: 16px;
@@ -13,13 +17,16 @@ body {
 }
 
 .content {
-  padding: 0 32px;
+  border-radius: 20px;
+  padding: 32px;
   width: 1200px;
   margin: 0 auto;
+  min-height: 90vh;
+  background-color: var(--content-color);
 }
 
-.noTask{
- color: var(--item-text-color);
+.noTask {
+  color: var(--item-text-color);
 }
 
 @media (max-width: 1200px) {

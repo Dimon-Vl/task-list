@@ -16,7 +16,7 @@ export const TaskListProvider = ({ children }) => {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(items))
     }, [items])
 
-    const unfinishedTaskQuantity = items.filter(el => !el.onFinished).length + '/'+ items.length
+    const unfinishedTaskQuantity = items.filter(el => !el.onFinished).length + ' з '+ items.length
 
     const addTask = (text) => {
         const addItem = () => {
